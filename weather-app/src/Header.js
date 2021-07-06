@@ -5,7 +5,11 @@ import GetGeo from './GeolocationApi';
 const Header = (props)=>{
     const[city, setCity]= useState('')
     const [checkCityValue, setCheck]=useState(true)
-    const {response, setResponse} = props
+    const {response, setResponse, SetHistory, history} = props
+
+    const historyHandler = () => {
+        SetHistory(!history)
+    }
     async function clickHandler(){
         if(city){
             setResponse(await GetResponse(city))
@@ -27,7 +31,7 @@ const Header = (props)=>{
                 <input type="text" className="header-input" placeholder={checkCityValue?"Введите город":'Строка поиска пуста'} value={city} onChange={changeHandler}/>
                 <button className="header-button" onClick={clickHandler}>{"Поиск"}</button>
                 <button className="header-geolocation" onClick={geolocationHandler}></button>
-                <button className="header-button--history">{"history"}</button>
+                <button className="header-button--history"onClick={historyHandler}>{history?'Зкрыть':"История"}</button>
         </header>
         </>
     )

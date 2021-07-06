@@ -11,10 +11,12 @@ function App() {
     <>
    <Header response={response} 
           setResponse={setResponse}
+          SetHistory={setHistory}
           history={history}
-          setHistory={setHistory}
    />
-   <Main data ={response}/>
+   <Main data ={response}
+        history={history}
+   />
    </>
   );
 }

@@ -40,7 +40,7 @@ const WeatherInfo = (props)=>{
                     </div>
                     <div className="weather-box">
                         <li className="weather-box__info">{"Today is:"} {current.weather_descriptions[0]}</li>
-                        <li className="weather-box__info">xz</li>
+                        <li className="weather-box__info">{"pressure:"}{current.pressure}</li>
                     </div>
                 </div>
             </div>
